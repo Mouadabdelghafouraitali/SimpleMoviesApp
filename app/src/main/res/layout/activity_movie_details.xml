@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".view.MovieDetailsActivity">
+
+
+    <LinearLayout
+        android:id="@+id/movieDetailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/moviePoster"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/poster"
+            android:src="@drawable/movie_poster_placeholder" />
+
+        <TextView
+            android:id="@+id/movieTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10dp"
+            android:text="@string/loading"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/movieReleaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10dp"
+            android:text="@string/date_place_holder"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/movieOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10dp"
+            android:text="@string/loading"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/loadingProgressBar"
+        android:layout_width="@dimen/_30dp"
+        android:layout_height="@dimen/_30dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        app:indicatorColor="@color/black"
+        app:trackColor="@color/pure_grey"
+        app:trackCornerRadius="@dimen/_2dp"
+        app:trackThickness="@dimen/_6dp" />
+</RelativeLayout>
