@@ -45,6 +45,8 @@ class MovieAdapter(
             itemView.findViewById(R.id.movieTitle)
         private val movieReleaseDate: TextView =
             itemView.findViewById(R.id.movieReleaseDate)
+        private val movieOverview: TextView =
+            itemView.findViewById(R.id.movieOverview)
 
         // Binds movie data to views
         fun bind(movie: Result) {
@@ -55,7 +57,7 @@ class MovieAdapter(
                 .into(moviePoster)
             movieTitle.text = movie.title // Setting movie title
             movieReleaseDate.text = movie.releaseDate // Setting movie release date
-
+            movieOverview.text = movie.overview // Setting movie overview
             // Sets click listener to the whole movie item view to handle movie selection
             itemView.setOnClickListener { onMovieClickListener.onMovieSelected(movie) }
         }

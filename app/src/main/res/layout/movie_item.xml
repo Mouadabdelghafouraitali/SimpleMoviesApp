@@ -3,30 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white">
+    android:background="@color/black">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100dp"
-        android:animateLayoutChanges="true"
+        android:layout_height="@dimen/_200dp"
         android:layout_margin="@dimen/_10dp"
+        android:animateLayoutChanges="true"
         app:cardBackgroundColor="@color/almost_white"
         app:cardCornerRadius="@dimen/_6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <ImageView
+                android:scaleType="centerCrop"
                 android:id="@+id/moviePoster"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/_100dp"
+                android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/poster"
                 android:src="@drawable/movie_poster_placeholder" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -35,7 +36,9 @@
                     android:id="@+id/movieTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10dp"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:layout_marginBottom="@dimen/_10dp"
                     android:text="@string/loading"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_16sp"
@@ -45,12 +48,40 @@
                     android:id="@+id/movieReleaseDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10dp"
+                    android:layout_below="@+id/movieTitle"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:layout_marginBottom="@dimen/_10dp"
                     android:text="@string/date_place_holder"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                    android:textStyle="normal" />
+
+                <View
+                    android:id="@+id/viewSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_0_5dp"
+                    android:layout_below="@+id/movieReleaseDate"
+                    android:alpha="0.2"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/movieOverview"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewSeparator"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:layout_marginBottom="@dimen/_10dp"
+                    android:ellipsize="end"
+                    android:maxLines="6"
+                    android:text="@string/appbar_scrolling_view_behavior"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
